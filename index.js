@@ -9,6 +9,8 @@ const User = require("./lists/User");
 const Class = require("./lists/Class");
 const JoinClass = require("./resolvers/JoinClass");
 const UnEnroll = require("./resolvers/UnEnroll");
+const expressSession = require("express-session");
+const MongoStore = require("connect-mongo");
 
 const PROJECT_NAME = "backend";
 const adapterConfig = {
@@ -18,6 +20,9 @@ const adapterConfig = {
 const keystone = new Keystone({
   adapter: new Adapter(adapterConfig),
   cookieSecret: process.env.COOKIE_SECRET,
+  sessionStore: MongoStore.create({
+    mongoUrl: process.env.MONGO_URI,
+  }),
   onConnect: process.env.CREATE_TABLES !== "true" && initialiseData,
 });
 
