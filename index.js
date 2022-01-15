@@ -9,7 +9,6 @@ const User = require("./lists/User");
 const Class = require("./lists/Class");
 const JoinClass = require("./resolvers/JoinClass");
 const UnEnroll = require("./resolvers/UnEnroll");
-const expressSession = require("express-session");
 const MongoStore = require("connect-mongo");
 
 const PROJECT_NAME = "backend";
