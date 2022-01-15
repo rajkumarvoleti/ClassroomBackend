@@ -23,6 +23,9 @@ const keystone = new Keystone({
   sessionStore: MongoStore.create({
     mongoUrl: process.env.MONGO_URI,
   }),
+  cookie: {
+    secure: false,
+  },
   onConnect: process.env.CREATE_TABLES !== "true" && initialiseData,
 });
 
