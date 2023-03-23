@@ -33,6 +33,9 @@ const keystone = new Keystone({
 const userList = keystone.createList("User", User);
 const classList = keystone.createList("Class", Class);
 keystone.createList("Announcement", Announcement);
+keystone.set("cors allow origin", true);
+keystone.set("cors allow methods", true);
+keystone.set("cors allow headers", true);
 
 //extendedschemas
 keystone.extendGraphQLSchema({
