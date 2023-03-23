@@ -11,10 +11,10 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development DISABLE_LOGGING=true keystone dev",
-    "build": "cross-env NODE_ENV=production keystone build",
-    "start": "cross-env NODE_ENV=production keystone start",
-    "create-tables": "cross-env CREATE_TABLES=true keystone create-tables"
+    "dev": "node_modules/cross-env/src/bin/cross-env.js NODE_ENV=development DISABLE_LOGGING=true keystone dev",
+    "build": "node_modules/cross-env/src/bin/cross-env.js NODE_ENV=production keystone build",
+    "start": "node_modules/cross-env/src/bin/cross-env.js NODE_ENV=production keystone start",
+    "create-tables": "node_modules/cross-env/src/bin/cross-env.js CREATE_TABLES=true keystone create-tables"
   },
   "dependencies": {
     "@keystonejs/adapter-mongoose": "^11.2.2",
